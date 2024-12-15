@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #222;
+            color: #e5e5e5;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #fff;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #e5e5e5;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #007ced;
+        }
+
+        .navbar .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background-color: #007ced; 
+            transition: all 0.3s;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        main h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #007ced;
+            text-align: center;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .resume-section {
+            margin-top: 20px;
+        }
+
+        .resume-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #007ced;
+            border-bottom: 2px solid #007ced;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .resume-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .resume-section ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #e5e5e5;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #333;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 20px 0;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .navbar .menu-toggle {
+                display: flex;
+            }
+
+            .navbar .menu-toggle.active div:nth-child(1) {
+                transform: rotate(45deg);
+                position: absolute;
+                top: 10px;
+            }
+
+            .navbar .menu-toggle.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .navbar .menu-toggle.active div:nth-child(3) {
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Resume</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="resume">
+        <section>
+            <h1>Resume</h1>
+            <p>Here you can find details about my education, experience, and skills.</p>
+            <div class="resume-section">
+                <h2>Education</h2>
+                <ul>
+                    <li>Bachelor of Science in Information Technology - Uka Tarsadia  University</li>
+                    <li>Higher Secondary Education - P P Savani School</li>
+                    <li>Primary and Secondary Education - Gajera Vidyabhavan School</li>
+                </ul>
+
+                <h2>Experience</h2>
+                <ul>
+                    <li><!--Frontend Developer at TechCorp (2022 - Present)-->N/A</li>
+                    <li><!--Web Development Intern at WebSolutions (2021 - 2022)-->N/A</li>
+                </ul>
+
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>C++, Python, PHP</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

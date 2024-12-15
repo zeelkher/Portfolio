@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #222;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #fff;
+            padding: 15px 20px;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 15px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #007ced;
+        }
+
+        /* Mobile Menu Toggle Button */
+        .navbar .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .navbar .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background-color: #007ced;
+            transition: all 0.3s;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .projects .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .projects .intro h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #007ced;
+        }
+
+        .projects .intro p {
+            font-size: 1.2rem;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .project h2 {
+            color: #007ced;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #007ced;
+            color: #fff;
+            background: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background: #007ced;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #333;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 20px 0;
+            }
+
+            .navbar .nav-links.active {
+                display: flex;
+            }
+
+            .navbar .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .navbar .menu-toggle {
+                display: flex;
+            }
+
+            .navbar .menu-toggle.active div:nth-child(1) {
+                transform: rotate(45deg);
+                position: absolute;
+                top: 10px;
+            }
+
+            .navbar .menu-toggle.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .navbar .menu-toggle.active div:nth-child(3) {
+                transform: rotate(-45deg);
+                position: absolute;
+                top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .logo {
+                font-size: 1.2rem;
+            }
+
+            .projects .intro h1 {
+                font-size: 2rem;
+            }
+
+            .project h2 {
+                font-size: 1.5rem;
+            }
+
+            .project p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">My Projects</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="projects">
+        <section class="intro">
+            <h1>Projects</h1>
+            <p>Here are some of the projects I have worked on, showcasing my skills and experience.</p>
+        </section>
+
+        <section class="project-list">
+            <div class="project">
+                <h2>Project 1: Doctor Appointment Management System</h2>
+                <p>The Doctor Appointment Management System streamlines appointment scheduling, allowing patients to book online. This eliminates physical visits and phone calls, reducing wait times and administrative burdens. It improves efficiency, patient satisfaction, and time management for both patients and doctors, enhancing the overall healthcare experience.</p>
+                <a href="https://github.com/zeelkher/Doctor_Appointment_Management_System" class="btn">View Project</a>
+            </div>
+
+            <div class="project">
+                <h2>Project 2: Focus Pause</h2>
+                <p>I created a Chrome extension that automatically pauses YouTube videos when switching between Chrome tabs and windows, making it easier to focus on work or learning without the hassle of repeatedly pausing the video.</p>
+                <a href="https://github.com/zeelkher/FocusPause" class="btn">View Project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
