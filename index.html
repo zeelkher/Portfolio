@@ -1,74 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Portfolio Website Design</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            text-decoration: none;
+        }
+        body {
+            overflow-x: hidden;
+            background-color: #222;
+            color: #e5e5e5;
+        }
+        .hero-header {
+            width: 100%;
+            min-height: 100vh;
+        }
+        .wrapper {
+            width: 1280px;
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 40px 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+        }
+        .logo .logo-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+        }
+        .navbar {
+            padding: 20px;
+            text-align: right;
+        }
+
+        .navbar a {
+            color: #e5e5e5;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #007ced;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 4rem;
+            flex-wrap: wrap;
+        }
+        .hero-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 15px solid #444;
+            box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+        }
+        .hero-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .hero-pic img:hover {
+            transform: scale(1.2);
+        }
+        .hero-text {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-text h5 {
+            font-size: 14px;
+        }
+        .hero-text h5 span {
+            color: #007ced;
+            font-size: 16px;
+        }
+        .hero-text h1 {
+            color: #007ced;
+            font-size: 3rem;
+        }
+        .hero-text p {
+            margin-top: 10px;
+        }
+        .btn-group {
+            margin: 30px 0;
+        }
+        .btn-group .btn {
+            background: #333;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: 2px solid #e5e5e5;
+            margin-right: 10px;
+            box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.78);
+            transition: all 0.3s ease;
+        }
+        .btn-group .btn:hover {
+            background-color: #007ced;
+            border-color: #007ced;
+        }
+        .btn.active {
+            border-color: #007ced;
+        }
+        .social i {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #e5e5e5;
+            transition: 0.5s ease;
+        }
+        .social i:hover {
+            color: #007ced;
+            transform: rotate(360deg);
+        }
+
+        /* Resume Section */
+        #resume {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        #resume h1 {
+            font-size: 2.5rem;
+            color: #007ced;
+            margin-bottom: 10px;
+        }
+        .resume-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .resume-section h2 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+            border-bottom: 2px solid #007ced;
+            display: inline-block;
+            color: #007ced;
+        }
+        .resume-section ul {
+            padding-left: 20px;
+        }
+        .resume-section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Projects */
+        .projects {
+            padding: 20px 20px;
+        }
+        .projects .intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .projects .intro h1 {
+            font-size: 2.5rem;
+            color: #007ced;
+        }
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .project {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .project h2 {
+            color: #007ced;
+            font-size: 1.8rem;
+        }
+        .project p {
+            margin: 10px 0 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #007ced;
+            color: #fff;
+            background: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background: #007ced;
+            color: #fff;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 20px 20px;
+        }
+        .contact h1 {
+            font-size: 2.5rem;
+            color: #007ced;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .contact-details {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            color: #e5e5e5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-details p {
+            margin: 10px 0;
+        }
+        .contact-details a {
+            color: #007ced;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding-top: 2rem;
+            }
+            .hero-text {
+                padding: 40px 0px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+                margin-left: 2rem;
+                padding: 8px 0;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <div class="hero-header">
         <div class="wrapper">
             <header>
                 <div class="logo">
-                    <!-- <i class="fa-solid fa-z"></i> -->
                     <div class="logo-text">Zeel Kher</div>
                 </div>
-                <nav>
-                    <div class="togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="navlinks">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                <nav class="navbar">
+                    <a href="#home">Home</a>
+                    <a href="#resume">Resume</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
                 </nav>
+
             </header>
-            <div class="container">
-                <div class="hero-pic">
-                    <img src="images/zeelkher.jpeg" alt="profile pic">
-                </div>
-                <div class="hero-text">
-                    <h5>Hi I'm <span class="input">Web Developer</span></h5>
-                    <h1>Zeel Kher</h1>
-                    <p>
-                       I am a passionate Web Developer skilled in both frontend and backend development, specializing in responsive and user-friendly interfaces using HTML, CSS, JavaScript, and Bootstrap, along with dynamic web applications built with PHP, MySQL, phpMyAdmin, and SQLite. I have developed projects like booking platforms and management systems that combine clean UI with solid backend logic, aiming to deliver efficient, visually appealing, and engaging digital solutions through practical coding and design principles.
-                    </p>
-                    <div class="btn-group">
-                        <a href="resume/zeelkher-Resume.pdf" class="btn active">Download CV</a>
-                        <a href="https://join.skype.com/invite/yF7rXMpC9Jec" class="btn">Contact</a>
+            <section id="home">
+                <div class="container">
+                    <div class="hero-pic">
+                        <img src="images/zeelkher.jpeg" alt="profile pic">
                     </div>
-                    <div class="social">
-                        <a href="https://www.facebook.com/share/18yhbEtU1y/?mibextid=qi2Omg"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/zeel-kher-a248b9326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/zeelkher_47"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://join.skype.com/invite/yF7rXMpC9Jec"><i class="fa-brands fa-skype"></i></a>
-                        <a href="https://github.com/zeelkher"><i class="fa-brands fa-github"></i></a>
+                    <div class="hero-text">
+                        <h5>Hi I'm <span class="input">Web Developer</span></h5>
+                        <h1>Zeel Kher</h1>
+                        <p>
+                             I am a passionate Web Developer skilled in both frontend and backend development, specializing in responsive and user-friendly interfaces using HTML, CSS, JavaScript, and Bootstrap, along with dynamic web applications built with PHP, MySQL, phpMyAdmin, and SQLite. I have developed projects like booking platforms and management systems that combine clean UI with solid backend logic, aiming to deliver efficient, visually appealing, and engaging digital solutions through practical coding and design principles.
+                        </p>
+                        <div class="btn-group">
+                            <a href="resume/zeelkher-Resume.pdf" class="btn active">Download CV</a>
+                            <a href="https://www.instagram.com/zeelkher_45/" class="btn">Contact</a>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.facebook.com/share/18yhbEtU1y/?mibextid=qi2Omg"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/zeel-kher-a248b9326"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/zeelkher_45/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://join.skype.com/invite/yF7rXMpC9Jec"><i class="fa-brands fa-skype"></i></a>
+                            <a href="https://github.com/zeelkher"><i class="fa-brands fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <section id="resume">
+                <h1>Resume</h1>
+    <p>Here you can find details about my education, experience, and skills.</p>
+
+    <div class="resume-section">
+        <br>
+        <div class="contact-info">
+            <div class="location">📍 Surat, Gujarat, India</div>
+            <div class="email">✉️ <a href="mailto:zeelkher0407@gmail.com">zeelkher0407@gmail.com</a></div>
+            <div class="phone">📞 +91 90541 06004</div><br>
+        </div>
+       <br>
+       <h2>Summary</h2>
+        <p>I am a Web Developer skilled in HTML, CSS, JavaScript, PHP, MySQL, and Bootstrap. I develop responsive, user-friendly websites and connect them with databases using phpMyAdmin and SQLite. I focus on building clean, functional, and reliable web applications that provide a smooth user experience.</p>
+    </div>
+
+    <!-- Rest of your resume sections (Projects, Education, etc.) remain unchanged -->
+
+    <div class="resume-section">
+        <h2>Projects</h2>
+        <p><strong>Github:</strong> <a href="https://github.com/zeelkher" target="_blank">github.com/zeelkher</a></p><br>
+        <ul>
+            <li>
+                <strong>Doctor Appointment Management System – PHP</strong><br>
+                Designed and developed a dynamic doctor appointment system using PHP and phpMyAdmin...
+            </li>
+            <li>
+                <strong>CaptureCrew – ASP.NET Core</strong><br>
+                Built a photographer booking platform using ASP.NET Core MVC and MySQL...
+            </li>
+            <li>
+                <strong>WiFi QR Code Generator – HTML, CSS, JavaScript</strong><br>
+                Developed a web tool to generate downloadable scannable WiFi QR codes...
+            </li>
+        </ul>
+    </div>
+
+    <!-- Education, Certifications, Skills, Languages, Availability remain unchanged -->
+
+            <div class="resume-section">
+                <h2>Education</h2>
+                <ul>
+                    <li>B.Sc IT - Uka Tarsadia University (2025)</li>
+                    <li>HSC - P P Savani School</li>
+                    <li>SSC - Gajera Vidyabhavan School</li>
+                </ul>
             </div>
+
+            <div class="resume-section">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Effective Leadership – HP Life (Nov 2024)</li>
+                    <li>Agile Project Management – HP Life (Oct 2024)</li>
+                    <li>Python Fundamentals – Great Learning Academy</li>
+                </ul>
+            </div>
+
+            <div class="resume-section">
+                <h2>Skills</h2>
+                <ul>
+                    <li><strong>Development:</strong> HTML, CSS, JavaScript, PHP, MySQL</li>
+                    <li><strong>Basic Programming:</strong> C, C++, Java, Data Structures, OOP</li>
+                    <li><strong>Tools:</strong> DB Browser, VS Code, XAMPP</li>
+                    <li><strong>UI/UX Design</strong></li>
+                </ul>
+            </div>
+
+            <div class="resume-section">
+                <h2>Languages</h2>
+                <ul>
+                    <li>English</li>
+                    <li>Hindi</li>
+                    <li>Gujarati</li>
+                </ul>
+            </div>
+
+            <div class="resume-section">
+                <h2>Availability</h2>
+                <p>Immediate | Open to Remote or Surat-based opportunities</p>
+            </div>
+
+            <!-- <h2>Experience</h2>
+                <ul>
+                    <li>Frontend Developer at TechCorp (2022 - Present)N/A</li>
+                    <li>Web Development Intern at WebSolutions (2021 - 2022)N/A</li>
+                </ul>-->
+            </section>
+
+            <section id="projects" class="projects">
+                <div class="intro">
+                    <h1>Projects</h1><br>
+                    <p>Here are some of the projects I have worked on...</p>
+                </div>
+                <div class="project-list">
+                    <div class="project">
+                        <h2>Project 1: Doctor Appointment Management System</h2>
+                         <p>The Doctor Appointment Management System streamlines appointment scheduling, allowing patients to book online. This eliminates physical visits and phone calls, reducing wait times and administrative burdens. It improves efficiency, patient satisfaction, and time management for both patients and doctors, enhancing the overall healthcare experience.</p>
+                        <a href="https://github.com/zeelkher/Doctor_Appointment_Management_System" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h2>Project 2: CaptureCrew</h2>
+                         <p>CaptureCrew is a full-stack web application designed to act as a photography service marketplace, connecting clients with professional photographers. Clients can browse profiles, compare services, and book photographers for various events, while photographers can register, showcase their portfolio, list services, and manage bookings.</p>
+                        <a href="https://github.com/zeelkher/CaptureCrew" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h2>Project 3: Focus Pause</h2>
+                         <p>I created a Chrome extension that automatically pauses YouTube videos when switching between Chrome tabs and windows, making it easier to focus on work or learning without the hassle of repeatedly pausing the video.</p>
+                        <a href="https://github.com/zeelkher/FocusPause" class="btn">View Project</a>
+                    </div>
+                    <div class="project">
+                        <h2>Project 4: WiFi QR Code Generator</h2>
+                        <p>This is a simple HTML, CSS, and JavaScript project that lets you generate a WiFi QR Code by just entering the WiFi name and password. Once generated, the QR code can be downloaded as an image or a PDF, making it easy to print or share for quick WiFi access without typing credentials.</p>
+                        <a href="https://zeelkher.github.io/WifiQR/" class="btn">View Project</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact">
+                <h1>Contact Me</h1>
+                <p>You can reach me through the following details...</p>
+                <div class="contact-details">
+                    <p><strong>Email:</strong> <a href="mailto:zeelkher0407@gmail.com">zeelkher0407@gmail.com</a></p>
+                    <p><strong>Skype:</strong> <a href="https://join.skype.com/invite/yF7rXMpC9Jec">live:.cid.bb2420289226f0f0</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/zeelkher_45/">zeelkher_45</a></p>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+            </footer>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
-        var togglebtn = document.querySelector(".togglebtn");
-        var nav = document.querySelector(".navlinks");
+        const togglebtn = document.querySelector(".togglebtn");
+        const nav = document.querySelector(".navlinks");
 
-        togglebtn.addEventListener("click", function() {
-            this.classList.toggle("click");
+        togglebtn.addEventListener("click", function () {
             nav.classList.toggle("open");
         });
-        var typed = new Typed(".input", {
-            strings: ["Web Developer","Web Developer","Web Developer","Web Developer"],
-            typedSpeed: 70,
-            backSpeed: 55,
+
+        const typed = new Typed(".input", {
+            strings: ["Web Developer"],
+            typeSpeed: 160,
+            backSpeed: 80,
             loop: true
         });
     </script>
