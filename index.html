@@ -41,9 +41,9 @@
             align-items: center;
         }
         .logo .logo-text {
-            font-size: 24px;
-            font-weight: 500;
-            color: #fff;
+            font-size: 3rem;;
+            font-weight: 900;
+            color: #fff;;
         }
         .navbar {
             padding: 20px;
@@ -269,13 +269,45 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 20px;
-                gap: 15px;
+                gap: 10px;
             }
 
             .navbar a {
                 margin: 10px 0;
-                margin-left: 2rem;
+                margin-left: 1rem;
                 padding: 8px 0;
+            }
+        }
+
+            @media (max-width: 460px) {
+           .container {
+                flex-direction: column;
+                padding-top: 2rem;
+            }
+            .hero-text {
+                padding: 40px 0px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                gap: 10px;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+                margin-left: 1rem;
+                padding: 8px 0;
+            }
+        }
+         @media (max-width: 390px) {
+           .navbar{
+                justify-content:center; 
+                gap:0.75rem;            
+            }
+            .navbar a{
+                font-size:0.75rem;      
+                margin: 8px;;               
             }
         }
 
@@ -457,17 +489,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
-        const togglebtn = document.querySelector(".togglebtn");
-        const nav = document.querySelector(".navlinks");
 
-        togglebtn.addEventListener("click", function () {
-            nav.classList.toggle("open");
-        });
-
-        const typed = new Typed(".input", {
-            strings: ["Web Developer"],
-            typeSpeed: 160,
-            backSpeed: 80,
+         var typed = new Typed(".input", {
+            strings: ["Web Developer","Web Developer","Web Developer","Web Developer"],
+            typedSpeed: 70,
+            backSpeed: 55,
             loop: true
         });
     </script>
