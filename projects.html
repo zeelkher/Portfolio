@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Zeel Kher</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<style>
+/* ==============================
+   Global Styles
+============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #222;
+    color: #e5e5e5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==============================
+   Wrapper
+============================== */
+.wrapper {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* ==============================
+   Header
+============================== */
+header {
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-text {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: #e5e5e5;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #007ced;
+}
+
+/* ==============================
+   Section Title
+============================== */
+section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #007ced;
+    margin-bottom: 10px;
+}
+
+section p.description {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+h4{
+    color: #007ced;
+font-size: 1.2rem;
+margin-bottom: 10px;
+}
+
+
+/* ==============================
+   Category Buttons
+============================== */
+.main-controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-controls button {
+    margin: 5px;
+    padding: 10px 25px;
+    border: 2px solid #007ced;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.main-controls button.active,
+.main-controls button:hover {
+    background: #007ced;
+}
+
+/* ==============================
+   Filter Dropdown
+============================== */
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid #007ced;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 280px;       /* wider */
+    max-height: 300px;      /* fixed height */
+    overflow-y: auto;       /* scroll when content is too long */
+    border-radius: 8px;
+    padding: 12px;
+    z-index: 1;
+    top: 100%;              /* make it appear below button */
+    left: 0;
+}
+
+.filter-content label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.filter-content input {
+    margin-right: 8px;
+}
+
+.filter-content i {
+    margin-right: 8px;
+    color: #007ced;
+}
+.filter-content label i {
+    margin-left: 6px;   /* adjust spacing as you like */
+}
+.filter-content label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+.filter-content::-webkit-scrollbar {
+    width: 8px;
+}
+.filter-content::-webkit-scrollbar-thumb {
+    background: #007ced;
+    border-radius: 4px;
+}
+.filter-content::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* ==============================
+   Projects Grid
+============================== */
+.projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.project {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px; /* fixed height */
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+.project-title h2 {
+    color: #007ced;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-description p {
+    font-size: 0.9rem;
+    color: #e5e5e5;
+    flex: 1;
+}
+
+.project-link a.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid #007ced;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.project-link a.btn:hover {
+    background: #007ced;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media(max-width:768px){
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .projects-wrapper {
+        grid-template-columns: 1fr; /* stack on small screens */
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- Header -->
+    <header>
+        <div class="logo-text">Zeel Kher</div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h1>My Projects</h1>
+        <p class="description">Here are some of the projects I have worked on...</p>
+
+        <!-- Category Buttons -->
+        <div class="main-controls">
+            <button class="active" onclick="filterCategory('all', event)">All Projects</button>
+            <button onclick="filterCategory('regular', event)">Projects</button>
+            <button onclick="filterCategory('mini', event)">Mini Projects</button>
+        </div>
+
+        <!-- Filter Dropdown -->
+        <div class="filter-dropdown">
+            <button class="filter-btn" onclick="toggleFilter()">
+                <i class="fas fa-filter"></i> Filter
+            </button>
+           <div class="filter-content" id="filterMenu">
+    <!-- Common Languages -->
+    <h4>Common Languages</h4><br>
+    <label><input type="checkbox" value="python" onchange="filterProjects()"> Python <i class="fab fa-python"></i></label>
+    <label><input type="checkbox" value="java" onchange="filterProjects()"> Java <i class="fab fa-java"></i></label>
+    <label><input type="checkbox" value="c" onchange="filterProjects()"> C <i class="fas fa-code"></i></label>
+    <label><input type="checkbox" value="cpp" onchange="filterProjects()"> C++ <i class="fas fa-code"></i></label>
+    <label><input type="checkbox" value="csharp" onchange="filterProjects()"> C# <i class="fas fa-hashtag"></i></label>
+    <label><input type="checkbox" value="go" onchange="filterProjects()"> Go <i class="fas fa-gofore"></i></label>
+    <label><input type="checkbox" value="php" onchange="filterProjects()"> PHP <i class="fab fa-php"></i></label>
+    <label><input type="checkbox" value="ruby" onchange="filterProjects()"> Ruby <i class="fas fa-gem"></i></label>
+    <label><input type="checkbox" value="swift" onchange="filterProjects()"> Swift <i class="fab fa-swift"></i></label>
+    <label><input type="checkbox" value="kotlin" onchange="filterProjects()"> Kotlin <i class="fas fa-mobile-alt"></i></label>
+    <label><input type="checkbox" value="r" onchange="filterProjects()"> R <i class="fas fa-chart-line"></i></label>
+
+    <!-- Web Languages -->
+    <h4>Web Languages</h4><br>
+    <label><input type="checkbox" value="html" onchange="filterProjects()"> HTML/CSS <i class="fab fa-html5"></i></label>
+    <label><input type="checkbox" value="javascript" onchange="filterProjects()"> JavaScript <i class="fab fa-js-square"></i></label>
+    <label><input type="checkbox" value="typescript" onchange="filterProjects()"> TypeScript <i class="fas fa-code"></i></label>
+
+    <!-- Frameworks / Libraries -->
+    <h4>Frameworks / Libraries</h4><br>
+    <label><input type="checkbox" value="react" onchange="filterProjects()"> React <i class="fab fa-react"></i></label>
+    <label><input type="checkbox" value="angular" onchange="filterProjects()"> Angular <i class="fab fa-angular"></i></label>
+    <label><input type="checkbox" value="vue" onchange="filterProjects()"> Vue <i class="fab fa-vuejs"></i></label>
+    <label><input type="checkbox" value="nodejs" onchange="filterProjects()"> Node.js <i class="fab fa-node-js"></i></label>
+    <label><input type="checkbox" value="django" onchange="filterProjects()"> Django <i class="fas fa-leaf"></i></label>
+    <label><input type="checkbox" value="flask" onchange="filterProjects()"> Flask <i class="fas fa-flask"></i></label>
+    <label><input type="checkbox" value="spring" onchange="filterProjects()"> Spring Boot <i class="fas fa-seedling"></i></label>
+    <label><input type="checkbox" value="dotnet" onchange="filterProjects()"> .NET <i class="fas fa-microsoft"></i></label>
+
+    <!-- Databases -->
+    <h4>Databases</h4><br>
+    <label><input type="checkbox" value="mysql" onchange="filterProjects()"> MySQL <i class="fas fa-database"></i></label>
+    <label><input type="checkbox" value="postgresql" onchange="filterProjects()"> PostgreSQL <i class="fas fa-database"></i></label>
+    <label><input type="checkbox" value="mongodb" onchange="filterProjects()"> MongoDB <i class="fas fa-leaf"></i></label>
+    <label><input type="checkbox" value="firebase" onchange="filterProjects()"> Firebase <i class="fas fa-fire"></i></label>
+</div>
+
+
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-wrapper">
+            <div class="project" data-type="regular" data-language="javascript html css php mysql">
+                <div class="project-title"><h2>Project 1: Doctor Appointment Management System</h2></div>
+                <div class="project-description">
+                    <p>The Doctor Appointment Management System streamlines appointment scheduling, allowing patients to book online. It improves efficiency, patient satisfaction, and time management.</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/zeelkher/Doctor_Appointment_Management_System" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project" data-type="regular" data-language="javascript html css mysql dotnet">
+                <div class="project-title"><h2>Project 2: CaptureCrew</h2></div>
+                <div class="project-description">
+                    <p>CaptureCrew is a full-stack web application acting as a photography service marketplace, connecting clients with professional photographers.</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/zeelkher/CaptureCrew" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project" data-type="regular" data-language="javascript json">
+                <div class="project-title"><h2>Project 3: Focus Pause</h2></div>
+                <div class="project-description">
+                    <p>A Chrome extension that automatically pauses YouTube videos when switching tabs, helping users focus on work or learning.</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/zeelkher/FocusPause" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project" data-type="mini" data-language="javascript html css">
+                <div class="project-title"><h2>Project 4: WiFi QR Code Generator</h2></div>
+                <div class="project-description">
+                    <p>A simple HTML, CSS, and JavaScript project that generates WiFi QR codes for easy sharing and printing of credentials.</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://zeelkher.github.io/WifiQR/" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <div class="project" data-type="mini" data-language="java">
+                <div class="project-title"><h2>Project 5: Online Bank System</h2></div>
+                <div class="project-description">
+                    <p>A Java console-based banking application that allows users to securely manage multiple accounts, perform transactions, and view statements — all with PIN-based authentication.</p>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/zeelkher/OnlineBankSystem" class="btn">View Project</a>
+                </div>
+            </div>
+
+            <div id="noProjects" style="display:none; text-align:center; grid-column:1/-1; color:#aaa; font-size:1rem; padding:20px;">
+        🚫 No projects found matching your filters.
+    </div>
+        </div>
+    </section>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024-25 Zeel Kher. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleFilter() {
+    const menu = document.getElementById('filterMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function filterCategory(cat, event) {
+    const projects = document.querySelectorAll('.project');
+    const checked = document.querySelectorAll('#filterMenu input:checked');
+    const selected = Array.from(checked).map(cb => cb.value.toLowerCase());
+    let visibleCount = 0;
+
+    projects.forEach(p => {
+        const matchCategory = (cat === 'all' || p.dataset.type === cat);
+
+        // multiple languages per project
+        const projectLangs = p.dataset.language ? p.dataset.language.toLowerCase().split(" ") : [];
+        const matchLang = (selected.length === 0 || selected.some(lang => projectLangs.includes(lang)));
+
+        const show = (matchCategory && matchLang);
+        p.style.display = show ? 'flex' : 'none';
+        if (show) visibleCount++;
+    });
+
+    // show/hide "No Projects" message
+    let noProjects = document.getElementById('noProjects');
+    if (!noProjects) {
+        // create if not exists
+        noProjects = document.createElement('div');
+        noProjects.id = 'noProjects';
+        noProjects.style.display = 'none';
+        noProjects.style.textAlign = 'center';
+        noProjects.style.gridColumn = '1 / -1';
+        noProjects.style.color = '#aaa';
+        noProjects.style.fontSize = '1rem';
+        noProjects.style.padding = '20px';
+        noProjects.textContent = '🚫 No projects found matching your filters.';
+        document.querySelector('.projects-wrapper').appendChild(noProjects);
+    }
+    noProjects.style.display = visibleCount === 0 ? 'block' : 'none';
+
+    // highlight active button
+    document.querySelectorAll('.main-controls button').forEach(b => b.classList.remove('active'));
+    if (event && event.target) event.target.classList.add('active');
+}
+
+function filterProjects() {
+    const activeBtn = document.querySelector('.main-controls button.active');
+    const cat = activeBtn && activeBtn.textContent.includes('Mini') ? 'mini' :
+                activeBtn && activeBtn.textContent.includes('Regular') ? 'regular' : 'all';
+    filterCategory(cat, { target: activeBtn });
+}
+</script>
+
+</body>
+</html>
