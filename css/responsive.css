@@ -1,0 +1,92 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    margin: 0 auto 30px;
+  }
+
+  .hero-tech {
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .featured-project .project-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar nav {
+    display: none; /* Mobile menu logic goes here */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding: 20px;
+  }
+
+  .navbar nav.active {
+    display: block;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hero {
+    padding: 120px 20px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about, .projects {
+    padding: 60px 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .floating-panels {
+    padding: 40px 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

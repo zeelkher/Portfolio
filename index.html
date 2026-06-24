@@ -1,204 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Zeel Kher | Home</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-<style>
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: Poppins, sans-serif;
-    text-decoration: none;
-}
-html, body {
-    height: 100%;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    background-color: #222;
-    color: #e5e5e5;
-}
-.hero-header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    flex: 1;
-}
-.wrapper {
-    flex: 1;
-    width: 1280px;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zeel Kher | Full Stack Developer</title>
 
-/* Header with left/right spacing */
-header {
-    padding: 40px 50px 30px; /* Added 50px left/right space */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.logo-text {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #fff;
-}
-.navbar {
-    display: flex;
-    gap: 2rem;
-}
-.navbar a {
-    color: #e5e5e5;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-.navbar a:hover { color: #007ced; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
-/* Container */
-.container {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 4rem;
-    flex-wrap: wrap;
-}
-.hero-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 15px solid #444;
-    box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
-}
-.hero-pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-.hero-pic img:hover { transform: scale(1.2); }
-.hero-text {
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-.hero-text h5 { font-size: 14px; }
-.hero-text h5 span { color: #007ced; font-size: 16px; }
-.hero-text h1 { color: #007ced; font-size: 3rem; }
-.hero-text p { margin-top: 10px; }
-.btn-group { margin: 30px 0; }
-.btn-group .btn {
-    background: #333;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 30px;
-    border: 2px solid #e5e5e5;
-    margin-right: 10px;
-    box-shadow: 0 10px 10px -8px rgba(0,0,0,0.78);
-    transition: all 0.3s ease;
-}
-.btn-group .btn:hover {
-    background-color: #007ced;
-    border-color: #007ced;
-}
-.social i {
-    font-size: 18px;
-    margin-right: 10px;
-    color: #e5e5e5;
-    transition: 0.5s ease;
-}
-.social i:hover {
-    color: #007ced;
-    transform: rotate(360deg);
-}
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-/* Footer sticky at bottom */
-footer {
-    text-align: center;
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    margin-top: auto;
-    width: 100%;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    header { padding: 30px 20px; }
-    .container { flex-direction: column; padding-top: 2rem; }
-    .hero-text { padding: 40px 0; text-align: center; }
-    .navbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px 0 0 0; }
-}
-@media (max-width: 460px) {
-    .navbar a { font-size: 0.9rem; }
-}
-@media (max-width: 390px) {
-    .navbar a { font-size: 0.75rem; margin: 8px; }
-}
-</style>
+  <script defer src="js/app.js"></script>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/cursor.js"></script>
 </head>
+
 <body>
+  <div class="cursor"></div>
 
-<div class="hero-header">
-    <div class="wrapper">
-        <header>
-            <div class="logo">
-                <div class="logo-text">Zeel Kher</div>
-            </div>
-            <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="resume.html">Resume</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
-
-        <section id="home">
-            <div class="container">
-                <div class="hero-pic">
-                    <img src="images/zeelkher.jpeg" alt="profile pic">
-                </div>
-                <div class="hero-text">
-                    <h5>Hi I'm <span class="input">Web Developer</span></h5>
-                    <h1>Zeel Kher</h1>
-                    <p>Passionate Web Developer skilled in frontend & backend...</p>
-                    <div class="btn-group">
-                        <a href="resume/zeelkher-Resume.pdf" class="btn active">Download CV</a>
-                        <a href="https://www.instagram.com/zeelkher_45/" class="btn">Contact</a>
-                    </div>
-                    <div class="social">
-                        <a href="https://www.facebook.com/share/18yhbEtU1y/?mibextid=qi2Omg"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.linkedin.com/in/zeel-kher-a248b9326"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://www.instagram.com/zeelkher_45/"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="https://join.skype.com/invite/yF7rXMpC9Jec"><i class="fa-brands fa-skype"></i></a>
-                            <a href="https://github.com/zeelkher"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2024-25 Zeel Kher. All Rights Reserved.</p>
-        </footer>
+  <!-- ========================= -->
+  <!-- NAVBAR -->
+  <!-- ========================= -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/icons/ZK.PNG" alt="ZK Logo" class="logo-icon">
     </div>
-</div>
+    <nav>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#featured">PROJECTS</a></li>
+        <li><a href="#stack">STACK</a></li>
+        <li><a href="#timeline">JOURNEY</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="menu-btn">☰</div>
+  </header>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-<script>
-var typed = new Typed(".input", {
-    strings: ["Web Developer","Web Developer"],
-    typeSpeed: 70,
-    backSpeed: 55,
-    loop: true
-});
-</script>
+  <!-- ========================= -->
+  <!-- HERO -->
+  <!-- ========================= -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <!-- LEFT -->
+      <div class="hero-image">
+        <div class="image-card">
+          <img src="assets/images/zeelkher.jpeg" alt="Zeel Kher">
+        </div>
+      </div>
+      <!-- RIGHT -->
+      <div class="hero-content">
+        <div class="status-panel">
+          <div class="status-dot"></div>
+          STATUS : ONLINE
+        </div>
+        <h1>ZEEL KHER</h1>
+        <h2>FULL STACK DEVELOPER</h2>
+        <p>
+          Specializing in Python & Django backend architectures. Crafting high-performance SaaS platforms, real-time
+          systems, and custom web applications.
+        </p>
+        <div class="hero-tech">
+          <span>PYTHON</span>
+          <span>DJANGO</span>
+          <span>JAVASCRIPT</span>
+          <span>HTML/CSS</span>
+        </div>
+        <div class="hero-buttons">
+          <a href="#featured" class="btn-primary">VIEW PROJECTS</a>
+          <a href="resume/zeel-kher-resume.pdf" class="btn-secondary">DOWNLOAD RESUME</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- FLOATING PANELS -->
+  <!-- ========================= -->
+  <section class="floating-panels">
+    <div class="panel panel-yellow">
+      <div class="panel-title"><i class="fas fa-server"></i> SYSTEM STATUS</div>
+      <div class="panel-content">
+        <p>PROJECTS : 10+</p>
+        <p>STATUS : ACTIVE</p>
+        <p>VERSION : 2026.1</p>
+      </div>
+    </div>
+    <div class="panel panel-blue">
+      <div class="panel-title"><i class="fas fa-hammer"></i> CURRENTLY BUILDING</div>
+      <div class="panel-content">
+        <p>IZEL</p>
+        <p>HYDROPULSE</p>
+      </div>
+    </div>
+    <div class="panel panel-pink">
+      <div class="panel-title"><i class="fas fa-clock"></i> BUILDING SINCE</div>
+      <div class="panel-content">
+        <h3>2022</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- ABOUT -->
+  <!-- ========================= -->
+  <section id="about" class="about">
+    <div class="section-heading">
+      <span>ABOUT.EXE</span>
+      <h2>WHO AM I?</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>FULL STACK DEVELOPER</h3>
+        <p>
+          I build web applications using Django, ASP.NET Core, PHP, JavaScript and SQL databases.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>CURRENT INTERESTS</h3>
+        <p>
+          Real-Time Systems<br>
+          WebSockets<br>
+          Business SaaS<br>
+          Marketplaces<br>
+          E-Commerce Platforms
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>FOCUS</h3>
+        <p>
+          Creating software products that solve real business problems while keeping the user experience simple and
+          fast.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>GOAL</h3>
+        <p>
+          Become a strong full-stack developer and build scalable SaaS products.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- PROJECTS (PART 2) -->
+  <!-- ========================= -->
+  <section id="featured" class="projects">
+    <div class="section-heading">
+      <span>WORK.EXE</span>
+      <h2>FEATURED PROJECTS</h2>
+    </div>
+
+    <div class="projects-container">
+
+      <!-- Featured Project: IZEL -->
+      <div class="project-card featured-project">
+        <div class="project-window-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="window-title">izel.exe</span>
+        </div>
+        <div class="project-content">
+          <div class="project-info">
+            <h3>IZEL</h3>
+            <p class="project-desc">
+              Jewellery E-Commerce + Inventory management platform. Features seller dashboards, secure payments, product
+              catalog, and stock tracking. Built with a Python/Django backend and custom Vanilla HTML/CSS design.
+            </p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>Vanilla JS</span>
+              <span>HTML5/CSS3</span>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-primary">LIVE DEMO</a>
+              <a href="#" class="btn-secondary">SOURCE CODE</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/images/izel-preview.png" alt="IZEL Project Preview" class="project-preview-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- Major Projects Grid -->
+      <div class="major-projects-grid">
+
+        <!-- Core Chat -->
+        <div class="project-card">
+          <div class="project-window-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="window-title">core.exe</span>
+          </div>
+          <div class="project-info">
+            <h3>CORE CHAT</h3>
+            <p>A real-time communication platform offering instant messaging, channels, and rich media support.</p>
+            <div class="tech-tags">
+              <span>Python/Django</span>
+              <span>WebSockets</span>
+              <span>Vanilla JS</span>
+              <span>HTML5/CSS3</span>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-outline">VIEW PROJECT</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- HydroPulse -->
+        <div class="project-card">
+          <div class="project-window-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="window-title">hydropulse.exe</span>
+          </div>
+          <div class="project-info">
+            <h3>HYDROPULSE</h3>
+            <p>Live washing car monitoring system dashboard. Real-time analytics.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>Vanilla JS</span>
+              <span>HTML5/CSS3</span>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-outline">VIEW PROJECT</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CaptureCrew -->
+        <div class="project-card">
+          <div class="project-window-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="window-title">capturecrew.exe</span>
+          </div>
+          <div class="project-info">
+            <h3>CAPTURECREW</h3>
+            <p>Business management software for photography agencies. Handles bookings, invoices, and client galleries.
+            </p>
+            <div class="tech-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Apache</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="btn-outline">VIEW PROJECT</a>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end major-projects-grid -->
+
+      <!-- Other Projects -->
+      <div class="other-projects">
+        <h3>> OTHER_PROGRAMS</h3>
+        <div class="other-grid">
+          <div class="mini-card">
+            <div class="mini-card-top">
+              <i class="far fa-folder-open folder-icon"></i>
+              <div class="mini-card-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h4>Doctor Appointment</h4>
+            <p>Scheduling system for clinics.</p>
+            <div class="tech-tags mini">
+              <span>PHP Core</span>
+              <span>Vanilla JS</span>
+              <span>HTML5/CSS3</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-top">
+              <i class="far fa-folder-open folder-icon"></i>
+              <div class="mini-card-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h4>GetQR</h4>
+            <p>Dynamic QR code generator.</p>
+            <div class="tech-tags mini">
+              <span>Python/Django</span>
+              <span>WebSockets</span>
+              <span>Vanilla JS</span>
+              <span>SQLite/Excel</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-top">
+              <i class="far fa-folder-open folder-icon"></i>
+              <div class="mini-card-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h4>Banking System</h4>
+            <p>Simulated banking portal.</p>
+            <div class="tech-tags mini">
+              <span>Core Java</span>
+              <span>Console GUI</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-top">
+              <i class="far fa-folder-open folder-icon"></i>
+              <div class="mini-card-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h4>WiFi QR</h4>
+            <p>Quick WiFi network sharing.</p>
+            <div class="tech-tags mini">
+              <span>Python/Django</span>
+              <span>Vanilla JS</span>
+              <span>SQLite</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-top">
+              <i class="far fa-folder-open folder-icon"></i>
+              <div class="mini-card-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h4>FocusPause-Chrome Extension</h4>
+            <p>Browser extension utility injecting content.js to control YouTube playback based on tab focus.</p>
+            <div class="tech-tags mini">
+              <span>Manifest V3</span>
+              <span>Vanilla JS</span>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-top">
+              <i class="far fa-folder-open folder-icon"></i>
+              <div class="mini-card-links">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h4>Splitwise</h4>
+            <p>Expense sharing application for groups and trips. Features include expense graphs, due payment reminders,
+              and transaction history.</p>
+            <div class="tech-tags mini">
+              <span>Python/Django</span>
+              <span>Vanilla JS</span>
+              <span>HTML5/CSS3</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- TECH STACK (PART 3) -->
+  <!-- ========================= -->
+  <section id="stack" class="stack">
+    <div class="section-heading" style="margin-left: 40px; margin-right: 40px;">
+      <span>TECH.EXE</span>
+      <h2>MY STACK</h2>
+    </div>
+
+    <div class="marquee-container">
+      <div class="marquee-text">
+        C ✦ C# ✦ C++ ✦ HTML5 ✦ CSS3 ✦ JAVA ✦ JAVASCRIPT ✦ PYTHON ✦ PHP ✦ .NET ✦ DJANGO ✦ APACHE ✦ MYSQL ✦ MONGODB ✦
+        SQLITE ✦ ADOBE ILLUSTRATOR ✦ CANVA ✦ FIGMA ✦ GITHUB ✦ GIT ✦ C ✦ C# ✦ C++ ✦ HTML5 ✦ CSS3 ✦ JAVA ✦ JAVASCRIPT ✦
+        PYTHON ✦ PHP ✦ .NET ✦ DJANGO ✦ APACHE ✦ MYSQL ✦ MONGODB ✦ SQLITE ✦ ADOBE ILLUSTRATOR ✦ CANVA ✦ FIGMA ✦ GITHUB ✦
+        GIT ✦
+      </div>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>BACKEND & LANGUAGES</h3>
+        <p>Python, Django, PHP, C, C#, C++, Java, .NET</p>
+      </div>
+      <div class="stack-card">
+        <h3>FRONTEND</h3>
+        <p>HTML5, CSS3, JavaScript (Vanilla)</p>
+      </div>
+      <div class="stack-card">
+        <h3>DATABASES</h3>
+        <p>PostgreSQL, MySQL, SQLite, MongoDB</p>
+      </div>
+      <div class="stack-card">
+        <h3>TOOLS & DESIGN</h3>
+        <p>Git, GitHub, Apache, Figma, Canva, Adobe Illustrator</p>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= -->
+  <!-- TIMELINE / JOURNEY -->
+  <!-- ========================= -->
+  <section id="timeline" class="timeline">
+    <div class="section-heading">
+      <span>LOGS.EXE</span>
+      <h2>MY JOURNEY</h2>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>2026 (Jan - Jul)</h3>
+          <h4>Advanced Projects & SaaS</h4>
+          <p>Built complex scalable systems including <strong>GetQR</strong> (advanced QR platform), <strong>Banking
+              System</strong>, <strong>Core Chat</strong> (Django Real-Time Chat), <strong>HydroPulse</strong> (car wash
+            management), <strong>IZEL</strong> (Jewellery E-Commerce), and <strong>Splitwise</strong>. Continued
+            self-learning alongside college by building a Chrome Extension productivity tool and a WiFi QR Generator.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>2025 (Jul - Dec)</h3>
+          <h4>Python / Django Internship</h4>
+          <p>Completed a 6-month intensive internship focused on Python and Django. Worked on real-world backend
+            architectures, database modeling, and building robust APIs.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>2022</h3>
+          <h4>BSc.IT & Foundation</h4>
+          <p>Started BSc.IT in college. Began my software development journey by building foundational applications like
+            <strong>Capture Crew</strong> and a <strong>Doctor Appointment Management System</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- CONTACT -->
+  <!-- ========================= -->
+  <section id="contact" class="contact">
+    <div class="section-heading">
+      <span>MAIL.EXE</span>
+      <h2>LET'S CONNECT</h2>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-grid">
+        <!-- Left Column: Info & Details -->
+        <div class="contact-left">
+          <div class="contact-info-block">
+            <h3>READY TO BUILD?</h3>
+            <p>I'm currently available for remote jobs and freelance opportunities. If you have a project in mind, let's
+              talk.</p>
+
+            <div class="social-links">
+              <a href="https://www.facebook.com/share/18yhbEtU1y/?mibextid=qi2Omg" target="_blank"><i
+                  class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/zeel-kher-a248b9326" target="_blank"><i
+                  class="fa-brands fa-linkedin"></i></a>
+              <a href="https://www.instagram.com/zeelkher_45/" target="_blank"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a href="https://join.skype.com/invite/yF7rXMpC9Jec" target="_blank"><i
+                  class="fa-brands fa-skype"></i></a>
+              <a href="https://github.com/zeelkher" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-email-card">
+            <div class="email-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="email-text">
+              <span>DIRECT EMAIL</span>
+              <a href="mailto:zeel.kher045@gmail.com">zeel.kher045@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="contact-right">
+          <form id="contactForm" class="neo-form">
+            <div class="form-group">
+              <input type="text" name="from_name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="from_email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">SEND MESSAGE</button>
+            <div class="success-message" id="successMessage"
+              style="margin-top: 15px; font-weight: bold; color: var(--accent-yellow);"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- FOOTER -->
+  <!-- ========================= -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">ZK</div>
+      <p>&copy; 2022-2026 Zeel Kher. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function () { emailjs.init("public_2ZOUBE6qmMtbEW7Tk"); })();
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerText;
+      btn.innerText = "SENDING...";
+
+      emailjs.sendForm('service_zwvvlul', 'template_cfamxk2', this)
+        .then(function () {
+          document.getElementById('successMessage').innerText = "Message sent successfully!";
+          document.getElementById('contactForm').reset();
+          btn.innerText = originalText;
+        }, function (error) {
+          alert("Oops! Something went wrong. Please try again.");
+          console.log(error);
+          btn.innerText = originalText;
+        });
+    });
+  </script>
 </body>
+
 </html>
